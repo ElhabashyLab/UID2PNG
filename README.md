@@ -19,11 +19,10 @@ It performs the following tasks:
   - `pandas`
   - `requests`
   - `tqdm`
-
+  
 You can install the required Python packages using:
 
-```bash
-pip install pandas requests tqdm
+> pip install pandas requests tqdm
 
 
 ## Input
@@ -37,8 +36,6 @@ The script requires:
   - The template must have placeholder commands at specific line numbers (default: line 3 for loading PDB, line 18 for saving PNG, line 19 for saving PSE).
 
 Example input TSV (`armadillo_proteins_entries.csv`):
-
-```tsv
 uid
 P12345
 Q8N1Q1
@@ -54,20 +51,20 @@ Default (no arguments)
 
 2. **Run the script** from the command line:
 
-```bash
-python3 run_af2_pymol.py
+
+> python3 run_af2_pymol.py
 
 
 With custom arguments
-```bash
-python3 run_af2_pymol.py \
+
+> python3 run_af2_pymol.py \
     --csv path/to/your_protein_uids.csv \
     --uid_column uid \
     --output_dir ./output_dir \
     --pml_template ./template_script.pml \
     --cleanup_log
 
-## 📂 Output Files
+## Output Files
 
 For each protein UID, the script generates the following files in your specified output directory:
 
