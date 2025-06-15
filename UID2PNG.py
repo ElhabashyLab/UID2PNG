@@ -22,10 +22,10 @@ import time
 from tqdm import tqdm
 
 # === DEFAULT PATHS AND PARAMETERS ===
-DEFAULT_WORKING_DIR = "/media/elhabashy/Elements/collaboration/markus_baier_project"
-DEFAULT_CSV = os.path.join(DEFAULT_WORKING_DIR, "about_dataset", "armadillo_proteins_entries.csv")
-DEFAULT_OUTPUT_DIR = os.path.join(DEFAULT_WORKING_DIR, "dataset", "armadillo_figures1")
-DEFAULT_PML_TEMPLATE = os.path.join(DEFAULT_WORKING_DIR, "script", "pymol_script.pml")
+DEFAULT_WORKING_DIR = "<path to working directory>"
+DEFAULT_CSV = os.path.join(DEFAULT_WORKING_DIR, "< path to proteins list>")
+DEFAULT_OUTPUT_DIR = os.path.join(DEFAULT_WORKING_DIR, "<path to output>")
+DEFAULT_PML_TEMPLATE = os.path.join(DEFAULT_WORKING_DIR, "<path to pymol_script.pml>")
 DEFAULT_UID_COLUMN = "uid"
 
 # === FUNCTION DEFINITIONS ===
