@@ -10,9 +10,8 @@ It performs the following tasks:
    - A PyMOL session file (`.pse`)
    - A snapshot image (`.png`)
 
----
 
-## 📦 Requirements
+## Requirements
 
 - Python 3.7+
 - [PyMOL](https://pymol.org/) installed and available in your shell as `$pymol`
@@ -25,3 +24,58 @@ You can install the required Python packages using:
 
 ```bash
 pip install pandas requests tqdm
+
+
+## Input
+
+The script requires:
+
+- **CSV/TSV file** containing protein UIDs.  
+  - The file must have a column named `uid` (or customize in the script).  
+  - The file should be tab-separated (`.tsv`) or comma-separated (`.csv`).  
+- **PyMOL script template (`.pml` file)** that the script modifies for each protein.  
+  - The template must have placeholder commands at specific line numbers (default: line 3 for loading PDB, line 18 for saving PNG, line 19 for saving PSE).
+
+Example input TSV (`armadillo_proteins_entries.csv`):
+
+```tsv
+uid
+P12345
+Q8N1Q1
+O96017
+
+## Usage
+Default (no arguments)
+1. **Edit the script to set paths** for:
+   - The working directory (`working_dir`)
+   - Input CSV/TSV file containing protein UIDs (`list_path`)
+   - PyMOL template `.pml` file (`pymol_template_path`)
+   - Output directory (`pymol_dir`)
+
+2. **Run the script** from the command line:
+
+```bash
+python3 run_af2_pymol.py
+
+
+With custom arguments
+```bash
+python3 run_af2_pymol.py \
+    --csv path/to/your_protein_uids.csv \
+    --uid_column uid \
+    --output_dir ./output_dir \
+    --pml_template ./template_script.pml \
+    --cleanup_log
+
+## 📂 Output Files
+
+For each protein UID, the script generates the following files in your specified output directory:
+
+- `UID.pdb` — AlphaFold structure file  
+- `UID.pml` — PyMOL input script  
+- `UID.pse` — PyMOL session file  
+- `UID.png` — Rendered image of the structure  
+- `UID.log` — Log file from the PyMOL run  
+
+> **Note:** If the `--cleanup_log` option is enabled, the `.log` files will be automatically deleted after execution.
+
