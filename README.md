@@ -1,6 +1,6 @@
 # UID2PNG
 
-This script automates the process of generating PyMOL visualizations for a list of proteins using structure models from AlphaFold Database.
+This script automates the retrieval of protein structure models from the AlphaFold Database using UniProt IDs and generates high-quality PyMOL visualizations for each structure.
 
 It performs the following tasks:
 1. Reads a list of protein UIDs from a TSV/CSV file.
